@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class Create extends React.Component {
 
@@ -27,6 +28,17 @@ class Create extends React.Component {
     handleSumbit(e) {
         alert(this.state.Title + "\n" + this.state.Year + "\n" + this.state.Poster);
         e.preventDefault();
+
+        const movieObject = {
+            title: this.state.Title,
+            year: this.state.Year, 
+            poster: this.state.Poster
+        }
+
+        axios.post('http://localhost:4000/api/movies', movieObject)
+        .then()
+        .catch();
+
         this.setState({ Title: "", Year: "", Poster: "" })
     }
 
