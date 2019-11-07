@@ -9,6 +9,7 @@ import Nav from 'react-bootstrap/Nav';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import Create from './components/create';
 import Read from './components/read';
+import Edit from './components/edit';
 
 class App extends Component {
   render() {
@@ -28,6 +29,7 @@ class App extends Component {
             <Route exact path="/" component={Content} />
             <Route path="/read" component={Read} />
             <Route path="/create" component={Create} />
+            <Route path="/edit" component={Edit}></Route>
           </Switch>
 
         </div>
