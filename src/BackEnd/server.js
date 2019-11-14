@@ -114,4 +114,24 @@ app.delete('/api/movies/:id', (req, res) => {
         });
 })
 
+app.get('/api/movies/:id', (req, res) => {
+    console.log("GET: " + req.params.id);
+
+    MovieModel.findById(req.params.id, (error, data) => {
+        res.json(data);
+    })
+})
+
+app.put('/api/movies/:id', (req, res) => {
+    console.log("Edit: " + req.params.id);
+    console.log(req.body);
+    MovieModel.findByIdAndUpdate(req.params.id,
+        req.body,
+        { new: true },
+        (error, data) => {
+            res.json(data);
+        }
+    )
+})
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
