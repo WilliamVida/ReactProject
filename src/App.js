@@ -1,37 +1,30 @@
 import './App.css';
 import React, { Component } from 'react';
-import Header from './components/header';
-import Footer from './components/footer';
-import Content from './components/content';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
-import Create from './components/create';
-import Read from './components/read';
-import Edit from './components/edit';
+import Add from './components/addTank';
+import TankDatabase from './components/tankDatabase';
+import UpdataTankData from './components/updataTankData';
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
         <div className="App">
-
-          <Navbar bg="primary" variant="dark">
+          <Navbar bg="dark" variant="dark">
             <Nav className="mr-auto">
-              <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/read">Read</Nav.Link>
-              <Nav.Link href="/create">Create</Nav.Link>
+              <Nav.Link href="/tankdatabase">Tank Database</Nav.Link>
+              <Nav.Link href="/add">Add a Tank</Nav.Link>
             </Nav>
           </Navbar>
 
           <Switch>
-            <Route exact path="/" component={Content} />
-            <Route path="/read" component={Read} />
-            <Route path="/create" component={Create} />
-            <Route path="/edit/:id" component={Edit}></Route>
+            <Route path="/tankdatabase" component={TankDatabase} />
+            <Route path="/add" component={Add} />
+            <Route path="/update/:id" component={UpdataTankData}></Route>
           </Switch>
-
         </div>
       </BrowserRouter>
     );
