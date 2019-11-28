@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import Add from './components/addTank';
 import TankDatabase from './components/tankDatabase';
-import UpdataTankData from './components/updataTankData';
+import UpdateTankData from './components/updateTankData';
 
 class App extends Component {
   render() {
@@ -23,7 +23,7 @@ class App extends Component {
           <Switch>
             <Route path="/tankdatabase" component={TankDatabase} />
             <Route path="/add" component={Add} />
-            <Route path="/update/:id" component={UpdataTankData}></Route>
+            <Route path="/update/:id" component={UpdateTankData}></Route>
           </Switch>
         </div>
       </BrowserRouter>

@@ -2,11 +2,26 @@ import React from 'react';
 import Tanks from './tanks';
 import axios from 'axios';
 
-class Read extends React.Component {
+class TankDatabase extends React.Component {
+
+    constructor() {
+        super();
+        this.ReloadDataMethod = this.ReloadDataMethod.bind(this);
+    }
 
     state = {
         tanks: []
     };
+
+    ReloadDataMethod() {
+        axios.get('http://localhost:4000/api/tanks')
+            .then((response) => {
+                this.setState({ tanks: response.data.tanks })
+            })
+            .catch((error) => {
+                console.log(error);
+            });
+    }
 
     componentDidMount() {
         axios.get('http://localhost:4000/api/tanks')
@@ -22,10 +37,10 @@ class Read extends React.Component {
         return (
             <div>
                 <h1>Tank Database</h1>
-                <Tanks myTanks={this.state.tanks}></Tanks>
+                <Tanks myTanks={this.state.tanks} ReloadDataMethod={this.ReloadDataMethod}></Tanks>
             </div>
         );
     }
 }
 
-export default Read;
+export default TankDatabase;

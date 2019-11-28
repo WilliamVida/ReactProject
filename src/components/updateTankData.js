@@ -89,10 +89,10 @@ class UpdataTankData extends React.Component {
             <div>
                 <h1>Update {this.state.Name} Data</h1>
 
-                <form onSubmit={this.handleSumbit} style={{ width: "60%", display:"inline-block" }}>
+                <form onSubmit={this.handleSumbit} style={{ width: "60%", display: "inline-block" }}>
                     <div className="form-group">
                         <label>Name</label>
-                        <input type="text" className="form-control" value={this.state.Name} onChange={this.handleName}></input>
+                        <input required type="text" className="form-control" value={this.state.Name} onChange={this.handleName}></input>
                     </div>
 
                     <div className="form-group">

@@ -91,12 +91,12 @@ class AddTank extends React.Component {
 
                     <div className="form-group">
                         <label>Main gun size in centimetres</label>
-                        <input type="number" className="form-control" value={this.state.Gun} onChange={this.handleGun}></input>
+                        <input type="number" step="0.1" className="form-control" value={this.state.Gun} onChange={this.handleGun}></input>
                     </div>
 
                     <div className="form-group">
                         <label>Weight in tonnes</label>
-                        <input type="number" className="form-control" value={this.state.Weight} onChange={this.handleWeight}></input>
+                        <input type="number" step="0.1" className="form-control" value={this.state.Weight} onChange={this.handleWeight}></input>
                     </div>
 
                     <div className="form-group">
@@ -110,7 +110,7 @@ class AddTank extends React.Component {
                     </div>
 
                     <div>
-                        <Button type="submit">Update Tank</Button>
+                        <Button type="submit">Add Tank</Button>
                     </div>
                 </form>
             </div>

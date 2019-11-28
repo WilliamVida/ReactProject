@@ -18,24 +18,26 @@ class TankList extends React.Component {
         console.log("Delete Clicked");
 
         axios.delete('http://localhost:4000/api/tanks/' + this.props.tanks._id)
-            .then()
+            .then(() => {
+                this.props.ReloadDataMethod();
+            })
             .catch();
     }
 
     render() {
         return (
             <div>
-                <CardDeck style={{ width: "30%", display:"block" }}>
+                <CardDeck style={{ width: "30%", display: "block" }}>
                     <Card>
                         <Card.Title><h4>{this.props.tanks.name}</h4></Card.Title>
-                        <Card.Img style={{}} variant="top" src={this.props.tanks.photograph} />
+                        <Card.Img variant="top" src={this.props.tanks.photograph} />
                         <Card.Body>
-                            <Card.Text>
-                                Type: {this.props.tanks.type}<br></br>
-                                Country of Origin: {this.props.tanks.country}<br></br>
-                                Main Gun Size: {this.props.tanks.gun} centimetres<br></br>
-                                Weight: {this.props.tanks.weight} tonnes<br></br>
-                                Number of Crew: {this.props.tanks.crew}
+                            <Card.Text style={{ 'text-align': "justify" }}>
+                                Type: <strong>{this.props.tanks.type}</strong> <br></br>
+                                Country of Origin: <strong>{this.props.tanks.country}</strong> <br></br>
+                                Main Gun Size: <strong>{this.props.tanks.gun} centimetres</strong> <br></br>
+                                Weight: <strong>{this.props.tanks.weight} tonnes</strong> <br></br>
+                                Number of Crew: <strong>{this.props.tanks.crew}</strong>
                             </Card.Text>
                         </Card.Body>
                         <Link to={"/update/" + this.props.tanks._id} className="btn btn-primary">Update Tank Data</Link>
