@@ -48,7 +48,6 @@ class AddTank extends React.Component {
     }
 
     handleSumbit(e) {
-        alert("Tank added");
         e.preventDefault();
 
         const tankObject = {
@@ -73,7 +72,7 @@ class AddTank extends React.Component {
             <div>
                 <h1>Add a Tank</h1>
 
-                <form onSubmit={this.handleSumbit} style={{ width: "60%", display:"inline-block" }}>
+                <form onSubmit={this.handleSumbit} style={{ width: "60%", display: "inline-block" }}>
                     <div className="form-group" >
                         <label>Name</label>
                         <input required type="text" className="form-control" value={this.state.Name} onChange={this.handleName}></input>

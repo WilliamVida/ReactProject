@@ -3,7 +3,6 @@ import Button from 'react-bootstrap/Button'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Card from 'react-bootstrap/Card'
-import CardDeck from 'react-bootstrap/CardDeck'
 
 class TankList extends React.Component {
 
@@ -26,24 +25,22 @@ class TankList extends React.Component {
 
     render() {
         return (
-            <div>
-                <CardDeck style={{ width: "30%", display: "block" }}>
-                    <Card>
-                        <Card.Title><h4>{this.props.tanks.name}</h4></Card.Title>
-                        <Card.Img variant="top" src={this.props.tanks.photograph} />
-                        <Card.Body>
-                            <Card.Text style={{ 'text-align': "justify" }}>
-                                Type: <strong>{this.props.tanks.type}</strong> <br></br>
-                                Country of Origin: <strong>{this.props.tanks.country}</strong> <br></br>
-                                Main Gun Size: <strong>{this.props.tanks.gun} centimetres</strong> <br></br>
-                                Weight: <strong>{this.props.tanks.weight} tonnes</strong> <br></br>
-                                Number of Crew: <strong>{this.props.tanks.crew}</strong>
-                            </Card.Text>
-                        </Card.Body>
-                        <Link to={"/update/" + this.props.tanks._id} className="btn btn-primary">Update Tank Data</Link>
-                        <Button variant="danger" onClick={this.DeleteTank}>Delete Tank From Database</Button>
-                    </Card>
-                </CardDeck>
+            <div style={{ display: "inline-block", margin: "20px" }}>
+                <Card border="dark" style={{ width: '25em',  }}>
+                    <Card.Title><h4>{this.props.tanks.name}</h4></Card.Title>
+                    <Card.Img variant="top" src={this.props.tanks.photograph} />
+                    <Card.Body>
+                        <Card.Text style={{ 'text-align': "justify" }}>
+                            Type: <b>{this.props.tanks.type}</b> <br></br>
+                            Country of Origin: <b>{this.props.tanks.country}</b> <br></br>
+                            Main Gun Size: <b>{this.props.tanks.gun} centimetres</b> <br></br>
+                            Weight: <b>{this.props.tanks.weight} tonnes</b> <br></br>
+                            Number of Crew: <b>{this.props.tanks.crew}</b>
+                        </Card.Text>
+                    </Card.Body>
+                    <Link to={"/update/" + this.props.tanks._id} className="btn btn-primary">Update Tank Data</Link>
+                    <Button variant="danger" onClick={this.DeleteTank}>Delete Tank From Database</Button>
+                </Card>
                 <br></br>
             </div>
         )

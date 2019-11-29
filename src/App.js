@@ -12,9 +12,10 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="App">
+        <div className="App" style={{ 'background-color': "#8F8F8F" }}>
           <Navbar bg="dark" variant="dark">
             <Nav className="mr-auto">
+              <Nav.Link href="/"><img src="https://icon-library.net/images/world-of-tanks-icon-png/world-of-tanks-icon-png-29.jpg" height="25" width="25"></img></Nav.Link>
               <Nav.Link href="/tankdatabase">Tank Database</Nav.Link>
               <Nav.Link href="/add">Add a Tank</Nav.Link>
             </Nav>
