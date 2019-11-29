@@ -26,7 +26,7 @@ class TankList extends React.Component {
     render() {
         return (
             <div style={{ display: "inline-block", margin: "20px" }}>
-                <Card border="dark" style={{ width: '25em',  }}>
+                <Card border="dark" style={{ width: '25em' }}>
                     <Card.Title><h4>{this.props.tanks.name}</h4></Card.Title>
                     <Card.Img variant="top" src={this.props.tanks.photograph} />
                     <Card.Body>

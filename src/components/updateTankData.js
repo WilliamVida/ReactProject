@@ -132,7 +132,6 @@ class UpdataTankData extends React.Component {
             </div>
         )
     }
-
 }
 
 export default UpdataTankData;

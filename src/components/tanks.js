@@ -5,7 +5,6 @@ class Tanks extends React.Component {
 
     render() {
         return this.props.myTanks.map((tanks) => {
-            // console.log({Tanks});
             return <TankList key={tanks._id} tanks={tanks} ReloadDataMethod={this.props.ReloadDataMethod}></TankList>
         });
     }
