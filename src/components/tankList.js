@@ -30,7 +30,7 @@ class TankList extends React.Component {
                     <Card.Title><h4>{this.props.tanks.name}</h4></Card.Title>
                     <Card.Img variant="top" src={this.props.tanks.photograph} />
                     <Card.Body>
-                        <Card.Text style={{ 'text-align': "justify" }}>
+                        <Card.Text style={{ textAlign: "justify" }}>
                             Type: <b>{this.props.tanks.type}</b> <br></br>
                             Country of Origin: <b>{this.props.tanks.country}</b> <br></br>
                             Main Gun Size: <b>{this.props.tanks.gun} centimetres</b> <br></br>
